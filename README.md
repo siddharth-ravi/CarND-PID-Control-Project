@@ -1,9 +1,12 @@
 # Udacity Self-Driving Car Enginer Nanodegree - _PID Control Project_
 ---
 ## Introduction
-The objective of this project is to use PID control to drive a car smoothly around a test track in a simulator. 
+The objective of this project is to use PID control to drive a car smoothly around a test track in a simulator.
+
 This has been divided into 2 sub-objectives:
+
 Smooth Driving: To drive the car smoothly around the test track at a moderate speed
+
 Fast Driving: To drive the car fast touching a maximum speed of 100 kmph without any incidents
 
 ---
