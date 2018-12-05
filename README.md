@@ -10,9 +10,9 @@ The objective of this project is to use PID control to drive a car smoothly arou
 ## Discussion Points
 * Effects of P,I,D components on driving
 
-The P (Proportional) component ensures the car returns to the center of the track in case there is a cross track error. This is essential to prevent the car from veering off the track
+...The P (Proportional) component ensures the car returns to the center of the track in case there is a cross track error. This is essential to prevent the car from veering off the track
 
-The D (Differential) component ensures the car does not overshoot the center line when returning to it because of the impact of the P component. It smoothens the return to the center line. 
+...The D (Differential) component ensures the car does not overshoot the center line when returning to it because of the impact of the P component. It smoothens the return to the center line. 
 
 The I (Integral) component accounts for any steering bias over a period of time. If there is a tendency for the steering to tilt to the left, the I component will ensure a slight right steering bias to counter the same. 
 
