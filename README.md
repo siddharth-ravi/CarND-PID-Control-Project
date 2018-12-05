@@ -7,6 +7,19 @@ The objective of this project is to use PID control to drive a car smoothly arou
 
 **Fast Driving**: To drive the car fast touching a maximum speed of 100 kmph without any incidents
 
+## Discussion Points
+* Effects of P,I,D components on driving
+
+The P (Proportional) component ensures the car returns to the center of the track in case there is a cross track error. This is essential to prevent the car from veering off the track
+
+The D (Differential) component ensures the car does not overshoot the center line when returning to it because of the impact of the P component. It smoothens the return to the center line. 
+
+The I (Integral) component accounts for any steering bias over a period of time. If there is a tendency for the steering to tilt to the left, the I component will ensure a slight right steering bias to counter the same. 
+
+For smooth driving, P, I and D values of 0.2, 0 and 25 respectively ensures smooth driving - there did not appear to be any steering bias requiring an I component. 
+
+
+
 ---
 
 # Original Udacity README
