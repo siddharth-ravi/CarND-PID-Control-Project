@@ -8,15 +8,33 @@ The objective of this project is to use PID control to drive a car smoothly arou
 **Fast Driving**: To drive the car fast touching a maximum speed of 100 kmph without any incidents
 
 ## Discussion Points
-* Effects of P,I,D components on driving
+* Effect of P,I,D components on driving
 
    The P (Proportional) component ensures the car returns to the center of the track in case there is a cross track error. This is     essential to prevent the car from veering off the track
 
-...The D (Differential) component ensures the car does not overshoot the center line when returning to it because of the impact of the P component. It smoothens the return to the center line. 
+   The D (Differential) component ensures the car does not overshoot the center line when returning to it because of the impact of the P component. It smoothens the return to the center line. 
 
-The I (Integral) component accounts for any steering bias over a period of time. If there is a tendency for the steering to tilt to the left, the I component will ensure a slight right steering bias to counter the same. 
+   The I (Integral) component accounts for any steering bias over a period of time. If there is a tendency for the steering to tilt to the left, the I component will ensure a slight right steering bias to counter the same. 
 
-For smooth driving, P, I and D values of 0.2, 0 and 25 respectively ensures smooth driving - there did not appear to be any steering bias requiring an I component. 
+   For smooth driving, P, I and D values of 0.2, 0 and 25 respectively ensures smooth driving - there did not appear to be any steering bias requiring an I component. 
+
+* Leveraging variable throttle values for faster driving
+
+  The track has some uniform sections such as the bridge and a constant radius left turn at the end of the lap.  But, it has sharp bends as well.  When humans drive, we always drive faster on straight roads and slow down at sharp bends.
+  
+  The existing fixed throttle has been replaced with a variable throttle.  This has been done by adding one more variable ‘throttle’ to the PID class. 
+
+  Higher CTEs indicate that we are not close to the center and are at a greater risk of going off-track.  Hence, we brake hard if CTE is very high, brake lesser if CTE is high and drive at full throttle if the CTE is low (in straight sections like the bridge). The extent of braking also depends on the current speed – only if we are going too fast, we need to brake as the P and D controllers are sufficient to control the car at slower speeds.  
+
+  The following code in main.cpp executes variable throttle adjustment: 
+  ```
+  double thr = 0.0;
+  if (fabs(cte) > 3 && speed > 15) thr = -0.85;
+  else if (fabs(cte) > 2 && speed > 25) thr = -0.5;
+  else if (fabs(cte) > 1 && speed > 30)  thr = 0.1;
+  else thr = pid.throttle;
+  ```
+
 
 
 
