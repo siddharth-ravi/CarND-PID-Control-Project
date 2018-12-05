@@ -1,5 +1,4 @@
 # Udacity Self-Driving Car Enginer Nanodegree - _PID Control Project_
-Self-Driving Car Engineer Nanodegree Program
 
 ---
 
