@@ -16,8 +16,9 @@ public:
   double Kp;
   double Ki;
   double Kd;
-
+  double throttle;
   /*
+
   * Constructor
   */
   PID();
@@ -30,7 +31,7 @@ public:
   /*
   * Initialize PID.
   */
-  void Init(double Kp, double Ki, double Kd);
+  void Init(double Kp, double Ki, double Kd, double throttle);
 
   /*
   * Update the PID error variables given cross track error.
@@ -41,6 +42,8 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+  //void Twiddle();
 };
 
 #endif /* PID_H */
