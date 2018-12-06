@@ -8,7 +8,7 @@ The objective of this project is to use PID control to drive a car smoothly arou
 **Fast Driving**: To drive the car fast touching a maximum speed of 100 kmph without any incidents
 
 ## Discussion Points
-* Effect of P,I,D components on driving
+* __Effect of P,I,D components on driving__
 
    The P (Proportional) component ensures the car returns to the center of the track in case there is a cross track error. This is     essential to prevent the car from veering off the track
 
@@ -18,7 +18,7 @@ The objective of this project is to use PID control to drive a car smoothly arou
 
    For smooth driving, P, I and D values of 0.2, 0 and 25 respectively ensures smooth driving - there did not appear to be any steering bias requiring an I component. 
 
-* Leveraging variable throttle values for faster driving
+* __Leveraging variable throttle values for faster driving__
 
   The track has some uniform sections such as the bridge and a constant radius left turn at the end of the lap.  But, it has sharp bends as well.  When humans drive, we always drive faster on straight roads and slow down at sharp bends.
   
@@ -35,7 +35,7 @@ The objective of this project is to use PID control to drive a car smoothly arou
   else thr = pid.throttle;
   ```
   
-* Tuning of PID parameters
+* __Tuning of PID parameters__
 
   Tuning was performed manually. 
 
@@ -48,7 +48,7 @@ The objective of this project is to use PID control to drive a car smoothly arou
   Variable Throttle values:  -0.85, -0.5, 0.1 and 0.78 in decreasing order of CTE buckets. 
 
 
-* Videos
+* __Videos__
 
   Slow driving:
 
