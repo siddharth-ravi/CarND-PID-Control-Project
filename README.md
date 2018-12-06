@@ -51,8 +51,11 @@ The objective of this project is to use PID control to drive a car smoothly arou
 * __Videos__
 
   Slow driving:
+  
+  https://github.com/siddharth-ravi/CarND-PID-Control-Project/blob/master/PID%20Videos/pid_slow_driving.wmv
 
   Fast driving:
+  
   https://github.com/siddharth-ravi/CarND-PID-Control-Project/blob/master/PID%20Videos/pid_fast_driving.wmv
   
 
