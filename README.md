@@ -34,7 +34,25 @@ The objective of this project is to use PID control to drive a car smoothly arou
   else if (fabs(cte) > 1 && speed > 30)  thr = 0.1;
   else thr = pid.throttle;
   ```
+  
+* Tuning of PID parameters
 
+Tuning was performed manually. 
+
+Kp:  This was tuned first – it was important that the car managed to steer away from the edges. 
+
+Kd: This was tuned next – this was tuned so that the car does not keep swerving till it reaches the center of the lane but this was not set so high that the car returns too late to the lane center at sharp bends and exits the track. 
+
+Ki:  There did not seem to be any steering alignment issues with the car – setting this to 0.001 or 0.0001 did not help.  This was eventually left as 0. 
+
+Variable Throttle values:  -0.85, -0.5, 0.1 and 0.78 in decreasing order of CTE buckets. 
+
+
+* Videos
+
+Slow driving:
+
+Fast driving:
 
 
 
